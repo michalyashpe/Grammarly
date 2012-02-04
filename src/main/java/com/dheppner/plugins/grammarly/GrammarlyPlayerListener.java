@@ -26,17 +26,16 @@ public class GrammarlyPlayerListener implements Listener {
     private int getReputationDamage(GrammarMistake mistake) {
         switch (mistake) {
             case CAPITALIZATION:
-                return 1;
-                break;
+                return plugin.getConfig().getInt("ReputationDamage.Capitalization");
             case PUNCTUATION:
-                return
-                break;
+                return plugin.getConfig().getInt("ReputationDamage.Punctuation");
             case SPELLING:
-                break;
+                return plugin.getConfig().getInt("ReputationDamage.Spelling");
             case HAVEGOT:
-                break;
+                return plugin.getConfig().getInt("ReputationDamage.HaveGot");
             case BRITISH:
-                break;
+                return plugin.getConfig().getInt("ReputationDamage.BritishEnglish");
         }
+        return 1;
     }
 }
